@@ -1,0 +1,397 @@
+
+<html lang="ru">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.1.3-dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bootstrap-5.1.3-dist/css/bootstrap-grid.min.css">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <link rel="stylesheet" type="text/css" href="lavaStyle.css">
+    <title>Сайт разработчика</title>
+  </head>
+  <body>
+<header>
+
+  <!--Меню-->
+
+  <nav class="navbar navbar-expand-lg navbar-dark fixed-top bg-dark">
+    <div class="container">
+      <a class="navbar-brand" href="#">GaBu</a>
+      <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Переключить навигацию">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+        <ul class="navbar-nav me-auto mb-2 mb-md-0">
+          <li class="nav-item">
+            <a class="nav-link" href="#myCarousel">Главная</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutDeveloper">Обо мне</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#features">Преимущества</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#services">Услуги</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#aboutUs">О нас</a>
+          </li>
+        </ul>
+        <div class="d-flex middleVerticalAlign" action="php/Form.php">
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#userCall" style="margin-right: 10px">Обратиться в поддержку</button>
+          <button type="button" class="btn btn-outline-success" data-bs-toggle="modal" data-bs-target="#modal">Войти</button>
+        </div>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!--Модальное окно авторизации-->
+
+<div class="modal fade" id="modal" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Авторизация</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-7 col-lg-8 container">
+        <form action="php/login.php" method="post">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Логин</label>
+              <input type="text" class="form-control" name="user_login" placeholder="" value="" required>
+            </div>
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Пароль</label>
+              <input type="password" class="form-control" name="user_pass" placeholder="" value="" required>
+            </div>
+          </div>
+          <hr class="my-4">
+        <button class="w-100 btn btn-primary btn-lg" type="submit">Войти</button>
+      </form>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+
+<!--Модальное окно звонка-->
+
+<div class="modal fade" id="userCall" tabindex="-1">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Обращение</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+      </div>
+      <div class="modal-body">
+        <div class="col-md-7 col-lg-8 container">
+        <form action="php/Vendor/create.php" method="post">
+          <div class="row g-3">
+            <div class="col-sm-6">
+              <label for="firstName" class="form-label">Имя</label>
+              <input type="text" class="form-control" name="first_nameX" id="firstName" placeholder="" value="" required>
+            </div>
+
+            <div class="col-sm-6">
+              <label for="lastName" class="form-label">Фамилия</label>
+              <input type="text" class="form-control" name="last_nameX" id="lastName" placeholder="" value="">
+            </div>
+
+            <div class="col-12">
+              <label for="email" class="form-label">Эл. адрес <span class="text-muted">(Обязательно)</span></label>
+              <input type="email" class="form-control" name="emailX" id="email" placeholder="you@example.com" required>
+            </div>
+
+            <div class="col-12">
+              <label for="phone" class="form-label">Телефон <span class="text-muted">(Обязательно)</span></label>
+              <input type="tel" class="form-control" name="phoneX" pattern="(7|8)[0-9]{10}" maxlength="11" id="phone" placeholder="8-999-999-99-99" required>
+            </div>
+
+            <div class="col-12">
+              <label for="application" class="form-label">Вопрос<span class="text-muted"></span></label>
+              <textarea type="text" class="form-control" placeholder="Опишите свой вопрос" rows="7" name="applicationX" id="application" required></textarea>
+            </div>
+          </div>
+          <hr class="my-4">
+
+          <div class="form-check">
+            <input type="checkbox" class="form-check-input" id="confedential-info" required>
+            <label class="form-check-label" for="confedential-info">Даю согласие на обработку своих персональных данных</label>
+          </div>
+          <button class="w-100 btn btn-primary btn-lg" type="submit">Оставить заявку</button>
+        </form>
+      </div>
+    </div>
+      </div>
+    </div>
+  </div>
+</div>
+<main>
+
+  <!--Слайдер-->
+
+  <div id="myCarousel" class="carousel slide" data-bs-ride="carousel"><a name="myCarousel"></a>
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="" aria-label="Slide 1"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class="active" aria-current="true"></button>
+      <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="2" aria-label="Slide 3" class=""></button>
+    </div>
+    <div class="carousel-inner">
+      <div class="carousel-item">
+        <img src="img/sliderThirdPhoto.png" width="100%">
+        <div class="container">
+          <div class="carousel-caption text-start">
+            <h1>Адаптивные сайты</h1>
+            <p>Хорошая картинка радует глаз, поэтому важно уметь ее правильно преподносить.</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item active">
+        <img src="img/sliderSecondPhoto.jpg" width="100%">
+        <div class="container">
+          <div class="carousel-caption">
+            <h1>Скорость загрузки</h1>
+            <p>Начинает свою работу уже с первых секунд!</p>
+          </div>
+        </div>
+      </div>
+      <div class="carousel-item">
+        <img src="img/sliderFirstPhoto.jpg" width="100%">
+        <div class="container">
+          <div class="carousel-caption text-end">
+            <h1>Легкость не менее важна</h1>
+            <p>Дома или в кафе, сайт будет загружаться даже при самом медленном интернете.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    <button class="carousel-control-prev" type="button" data-bs-target="#myCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Предыдущий</span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#myCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="visually-hidden">Следующий</span>
+    </button>
+  </div>
+  <div class="container marketing">
+
+    <!--Блок о разработчике-->
+
+    <a name="aboutDeveloper"></a>
+      <div class="row featurette">
+        <div class="col-lg-5" id="fotoDeveloper">
+        <img class="rounded-circle img-fluid shadow" width="300" height="300" src="img/my (2).jfif">
+      </div>
+      <div class="col-md-7">
+        <h2 class="featurette-heading">Разработчик Булат</h2>
+        <p class="lead">Учащийся 3 курса. Пишу программную наполняющую сайтов, создаю динамические web-страницы, web-интерфейсы для работы с базами данных. Поддерживаю/модернизирую/дополняю уже существующие сайты.</p>
+      </div>
+    </div>
+
+    <!--Блок преимуществ-->
+
+    <a name="features"><hr class="featurette-divider"></a>
+    <div class="row centerAlignText">
+      <div class="col-lg-4">
+        <img class="rounded-circle img-fluid shadow" src="img/timeGreen.png" width="140" height="140">
+        <h2>Быстрая консультация</h2>
+        <p>Со мной создание технического задания сайта не займет лишнего времени!</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="rounded-circle img-fluid shadow" src="img/moneyGreen.png" width="140" height="140">
+        <h2>Деньги в дело</h2>
+        <p>Вы всегда знаете куда идут средства разработки сайта!</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="rounded-circle img-fluid shadow" src="img/likeGreen.png" width="140" height="140">
+        <h2>Доверие клиентов</h2>
+        <p>Есть наработанная база клиентов, сайты которых постоянно поддерживаются. Именно они показатель моей работы!</p>
+      </div>
+    </div>
+
+    <!--Блок услуг-->
+
+    <a class="services" name="services"><hr class="featurette-divider"></a>
+    <div id="myServices" class="carousel slide" data-bs-ride="carousel">
+
+        <!--Часть с лавовой лампой началась-->
+
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob"></div>
+        <div class="blob blob-top"></div>
+        <div class="blob blob-bottom"></div>
+
+        <!--Часть с лавовой лампой закончилась-->
+
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#myServices" data-bs-slide-to="0" class="active" aria-label="Slide 1"  aria-current="true"></button>
+        <button type="button" data-bs-target="#myServices" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
+      </div>
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <div class="row row-cols-1 row-cols-lg-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Консультация</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">Бесплатно</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Узнаем что вам требуется</li>
+              <li>Как я могу это реализовать</li>
+              <li>Возможную стоимость и время разработки сайта</li>
+              <li>Возможная реализация</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-success">Попробовать</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-success">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Разработка лендинга</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">4000 ₽</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Все, что есть в консультации</li>
+              <li>Простой сайт для рекламы продукта</li>
+              <li>Поддержка по эл. почте</li>
+              <li>Долгий доступ к файлу</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Приобрести</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-success">
+          <div class="card-header py-3 text-white bg-success border-success">
+            <h4 class="my-0 fw-normal">Работа анимации</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">5000 ₽</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Все, что есть в создании лендинга</li>
+              <li>Добавление на сайт анимированных и динамических объектов</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Приобрести</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        <div class="carousel-item">
+          <div class="row row-cols-1 row-cols-lg-3 mb-3 text-center">
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-success">
+          <div class="card-header py-3">
+            <h4 class="my-0 fw-normal">Адаптация</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">2000 ₽</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Все, что есть в создании лендинга</li>
+              <li>Реализация адаптации размеров сайта под различные устройства</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-outline-success">Приобрести</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-success">
+          <div class="card-header py-3 text-white bg-success border-success">
+            <h4 class="my-0 fw-normal">База данных</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">3000 ₽</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Создание и подключение к базе данных</li>
+              <li>Удобство редактирования базы данных через страницу администратора</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Приобрести</button>
+          </div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="card mb-4 rounded-3 shadow-sm border-success">
+          <div class="card-header py-3 text-white bg-success border-success">
+            <h4 class="my-0 fw-normal">Все включено</h4>
+          </div>
+          <div class="card-body">
+            <h1 class="card-title pricing-card-title">8000 ₽</h1>
+            <ul class="list-unstyled mt-3 mb-4">
+              <li>Весь спектр услуг</li>
+              <li>Максимальная поддержка на всех этапах работы</li>
+              <li>База данных, проработанная под нужды клиента</li>
+            </ul>
+            <button type="button" class="w-100 btn btn-lg btn-success">Приобрести</button>
+          </div>
+        </div>
+      </div>
+    </div>
+        </div>
+        </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#myServices" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Предыдущий</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#myServices" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Следующий</span>
+      </button>
+    </div>
+
+    <!--Блок отзывов-->
+
+    <a class="reviews" name="reviews"><hr class="featurette-divider"></a>
+    <div class="row centerAlignText">
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto reviewsPhoto shadow" src="img/отзыв2.jpg" width="220" height="220">
+        <p>Заказал разработку сайта. Работу начал показывать уже в первые дни. Предлагал удобные способы реализации задуманных идей. Сайтом остался доволен.</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto reviewsPhoto shadow" src="img/отзыв1.jpg" width="220" height="220">
+        <p>Решила открыть маленькое кофе и создать для него сайт. Наткнулась на этого молодого человека и не долго думая заказала разработку сайта у него и не пожалела!</p>
+      </div>
+      <div class="col-lg-4">
+        <img class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto reviewsPhoto shadow" src="img/отзыв3.jpg" width="220" height="220 ">
+        <p>Для меня было важно создать простенький сайт и подключить к нему базу данных, с чем данный разработчик справился очень быстро.</p>
+      </div>
+    </div>
+
+    <!--Футер-->
+
+    <a name="aboutUs"><hr class="featurette-divider"></a>
+  <footer class="container">
+    <p class="float-end"><a href="#">Вернуться наверх</a></p>
+    <p>© 2017–2021 Компания, Timly. · <a href="#">Конфиденциальность</a> · <a href="#">Условия</a></p>
+  </footer>
+</main>
+    <script src="bootstrap-5.1.3-dist/js/bootstrap.min.js"></script>
+</body>
+
+  <!--Эффект лавы-->
+
+  <svg style="display: none;">
+    <defs>
+      <filter id="lavaPart">
+        <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+        <feColorMatrix in="blur" mode="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7" result="lavaPart" />
+        <feBlend in="SourceGraphic" in2="lavaPart" />
+      </filter>
+    </defs>
+  </svg>
+
+</html>
